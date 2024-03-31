@@ -5,6 +5,7 @@
   "module": "./src/main.ts",
   "types": "./dist/main.d.ts",
   "scripts": {
+    "postinstall": "vite build",
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview"
