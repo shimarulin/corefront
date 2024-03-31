@@ -1,5 +1,13 @@
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+
 # Node.js
 node_modules
 
 # pnpm
 .pnpm-debug.log
+
+# Build directories and files
+dist
