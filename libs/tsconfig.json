@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "declaration": true,
+      "importHelpers": true,
+      "module": "ESNext",
+      "strict": true,
+      "target": "ES2020",
+      "esModuleInterop": true,
+      "moduleResolution": "bundler",
+      "resolveJsonModule": true,
+    },
+    "exclude": ["node_modules", "dist", "**/__tests__", "**/*.test.ts", "**/*.spec.ts"]
+  }
