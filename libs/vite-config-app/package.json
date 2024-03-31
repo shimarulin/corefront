@@ -7,9 +7,12 @@
   "exports": {
     "import": "./dist/index.js"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "prepare": "pnpm run build",
-    "build": "tsc -b"
+    "prepare": "vite build",
+    "build": "tsc --noEmit && vite build"
   },
   "dependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
