@@ -2,17 +2,7 @@
   "name": "@corefront/article-details",
   "version": "0.0.0",
   "type": "module",
-  "files": [
-    "dist"
-  ],
-  "main": "./dist/main.umd.cjs",
-  "module": "./dist/main.js",
-  "exports": {
-    ".": {
-      "import": "./dist/main.js",
-      "require": "./dist/main.umd.cjs"
-    }
-  },
+  "module": "./src/main.ts",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
