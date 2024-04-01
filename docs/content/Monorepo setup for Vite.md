@@ -1,0 +1,1 @@
+- [Monorepo Setup - Peers, Multivariate Peers in packages · vitejs/vite · Discussion #14672 · GitHub](https://github.com/vitejs/vite/discussions/14672)
