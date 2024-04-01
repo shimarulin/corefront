@@ -25,6 +25,6 @@
   "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "@corefront/vite-config-lib-ts": "workspace:^"
+    "@corefront/vite-config-lib-ts": "workspace:*"
   }
 }
