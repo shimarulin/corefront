@@ -14,8 +14,12 @@
     "prepare": "vite build",
     "build": "tsc --noEmit && vite build"
   },
-  "dependencies": {
-    "@corefront/vite-config-base": "workspace:*"
+  "devDependencies": {
+    "@corefront/vite-config-base": "workspace:*",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "typescript": "^5.3.3",
+    "vite": "^5.2.0",
+    "vite-plugin-dts": "^3.8.1"
   },
   "keywords": [],
   "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",

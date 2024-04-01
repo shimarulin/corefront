@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "description": "Vite: base config",
   "types": "./main.d.ts",
-  "dependencies": {
-    "@corefront/dependency-provider-vite-typescript": "workspace:*"
+  "devDependencies": {
+    "typescript": "^5.3.3"
   },
   "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
   "license": "ISC"
