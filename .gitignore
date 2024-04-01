@@ -11,3 +11,6 @@ node_modules
 
 # Build directories and files
 dist
+
+# Obsidian settings
+.obsidian
