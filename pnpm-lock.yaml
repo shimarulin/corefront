@@ -28,22 +28,22 @@ importers:
         version: 2.0.7(typescript@5.4.3)
     devDependencies:
       '@corefront/vite-config-app-vue':
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:../../../../libs/vite-config-app-vue
       typescript:
-        specifier: ^5.2.2
+        specifier: ^5.3.3
         version: 5.4.3
 
   deps/dependency-provider-typescript:
     dependencies:
       typescript:
-        specifier: ^5.2.2
+        specifier: ^5.3.3
         version: 5.4.3
 
   deps/dependency-provider-vite-typescript:
     dependencies:
       '@corefront/dependency-provider-typescript':
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:../dependency-provider-typescript
       vite:
         specifier: ^5.2.0
@@ -77,8 +77,8 @@ importers:
         specifier: ^20.10.5
         version: 20.12.2
       '@vitejs/plugin-vue':
-        specifier: ^4.5.2
-        version: 4.6.2(vite@5.2.7)(vue@3.4.21)
+        specifier: ^5.0.4
+        version: 5.0.4(vite@5.2.7)(vue@3.4.21)
       cross-env:
         specifier: ^7.0.3
         version: 7.0.3
@@ -86,28 +86,28 @@ importers:
         specifier: ^5.3.3
         version: 5.4.3
       vite:
-        specifier: ^5.0.10
+        specifier: ^5.2.0
         version: 5.2.7(@types/node@20.12.2)
       vue-tsc:
-        specifier: ^1.8.26
-        version: 1.8.27(typescript@5.4.3)
+        specifier: ^2.0.6
+        version: 2.0.7(typescript@5.4.3)
 
   libs/vite-config-app-vue:
     dependencies:
       '@corefront/vite-config-base':
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:../vite-config-base
 
   libs/vite-config-base:
     dependencies:
       '@corefront/dependency-provider-vite-typescript':
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:../../deps/dependency-provider-vite-typescript
 
   libs/vite-config-lib-ts:
     dependencies:
       '@corefront/vite-config-base':
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:../vite-config-base
 
 packages:
@@ -662,17 +662,6 @@ packages:
       '@types/node': 20.12.2
     dev: true
 
-  /@vitejs/plugin-vue@4.6.2(vite@5.2.7)(vue@3.4.21):
-    resolution: {integrity: sha512-kqf7SGFoG+80aZG6Pf+gsZIVvGSCKE98JbiWqcCV9cThtg91Jav0yvYFC9Zb+jKetNGF6ZKeoaxgZfND21fWKw==}
-    engines: {node: ^14.18.0 || >=16.0.0}
-    peerDependencies:
-      vite: ^4.0.0 || ^5.0.0
-      vue: ^3.2.25
-    dependencies:
-      vite: 5.2.7(@types/node@20.12.2)
-      vue: 3.4.21(typescript@5.4.3)
-    dev: true
-
   /@vitejs/plugin-vue@5.0.4(vite@5.2.7)(vue@3.4.21):
     resolution: {integrity: sha512-WS3hevEszI6CEVEx28F8RjTX97k3KsrcY6kvTg7+Whm5y3oYvcqzVeGCU3hxSAn4uY2CLCkeokkGKpoctccilQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
@@ -682,42 +671,41 @@ packages:
     dependencies:
       vite: 5.2.7(@types/node@20.12.2)
       vue: 3.4.21(typescript@5.4.3)
-    dev: false
 
   /@volar/language-core@1.11.1:
     resolution: {integrity: sha512-dOcNn3i9GgZAcJt43wuaEykSluAuOkQgzni1cuxLxTV0nJKanQztp7FxyswdRILaKH+P2XZMPRp2S4MV/pElCw==}
     dependencies:
       '@volar/source-map': 1.11.1
+    dev: false
 
   /@volar/language-core@2.1.6:
     resolution: {integrity: sha512-pAlMCGX/HatBSiDFMdMyqUshkbwWbLxpN/RL7HCQDOo2gYBE+uS+nanosLc1qR6pTQ/U8q00xt8bdrrAFPSC0A==}
     dependencies:
       '@volar/source-map': 2.1.6
-    dev: false
 
   /@volar/source-map@1.11.1:
     resolution: {integrity: sha512-hJnOnwZ4+WT5iupLRnuzbULZ42L7BWWPMmruzwtLhJfpDVoZLjNBxHDi2sY2bgZXCKlpU5XcsMFoYrsQmPhfZg==}
     dependencies:
       muggle-string: 0.3.1
+    dev: false
 
   /@volar/source-map@2.1.6:
     resolution: {integrity: sha512-TeyH8pHHonRCHYI91J7fWUoxi0zWV8whZTVRlsWHSYfjm58Blalkf9LrZ+pj6OiverPTmrHRkBsG17ScQyWECw==}
     dependencies:
       muggle-string: 0.4.1
-    dev: false
 
   /@volar/typescript@1.11.1:
     resolution: {integrity: sha512-iU+t2mas/4lYierSnoFOeRFQUhAEMgsFuQxoxvwn5EdQopw43j+J27a4lt9LMInx1gLJBC6qL14WYGlgymaSMQ==}
     dependencies:
       '@volar/language-core': 1.11.1
       path-browserify: 1.0.1
+    dev: false
 
   /@volar/typescript@2.1.6:
     resolution: {integrity: sha512-JgPGhORHqXuyC3r6skPmPHIZj4LoMmGlYErFTuPNBq9Nhc9VTv7ctHY7A3jMN3ngKEfRrfnUcwXHztvdSQqNfw==}
     dependencies:
       '@volar/language-core': 2.1.6
       path-browserify: 1.0.1
-    dev: false
 
   /@vue/compiler-core@3.4.21:
     resolution: {integrity: sha512-MjXawxZf2SbZszLPYxaFCjxfibYrzr3eYbKxwpLR9EQN+oaziSu3qKVbwBERj1IFIB8OLUewxB5m/BFzi613og==}
@@ -771,6 +759,7 @@ packages:
       path-browserify: 1.0.1
       typescript: 5.4.3
       vue-template-compiler: 2.7.16
+    dev: false
 
   /@vue/language-core@2.0.7(typescript@5.4.3):
     resolution: {integrity: sha512-Vh1yZX3XmYjn9yYLkjU8DN6L0ceBtEcapqiyclHne8guG84IaTzqtvizZB1Yfxm3h6m7EIvjerLO5fvOZO6IIQ==}
@@ -788,7 +777,6 @@ packages:
       path-browserify: 1.0.1
       typescript: 5.4.3
       vue-template-compiler: 2.7.16
-    dev: false
 
   /@vue/reactivity@3.4.21:
     resolution: {integrity: sha512-UhenImdc0L0/4ahGCyEzc/pZNwVgcglGy9HVzJ1Bq2Mm9qXOpP8RyNTjookw/gOCUlXSEtuZ2fUg5nrHcoqJcw==}
@@ -944,7 +932,7 @@ packages:
   /builtins@5.0.1:
     resolution: {integrity: sha512-qwVpFEHNfhYJIzNRBvd2C1kyo6jz3ZSMPyyuR47OPdiKWlbYnZNyDWuyR175qDnAJLiCo5fBBqPb3RiXgWlkOQ==}
     dependencies:
-      semver: 7.6.0
+      semver: 7.5.4
     dev: true
 
   /bytes@3.0.0:
@@ -1740,10 +1728,10 @@ packages:
 
   /muggle-string@0.3.1:
     resolution: {integrity: sha512-ckmWDJjphvd/FvZawgygcUeQCxzvohjFO5RxTjj4eq8kw359gFF3E1brjfI+viLMxss5JrHTDRHZvu2/tuy0Qg==}
+    dev: false
 
   /muggle-string@0.4.1:
     resolution: {integrity: sha512-VNTrAak/KhO2i8dqqnqnAHOa3cYBwXEZe9h+D5h/1ZqFSTEFHdM65lR7RoIqq3tBBYavsOXV84NoHXZ0AkPyqQ==}
-    dev: false
 
   /nanoid@3.3.7:
     resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
@@ -1761,7 +1749,7 @@ packages:
     dependencies:
       hosted-git-info: 7.0.1
       proc-log: 3.0.0
-      semver: 7.6.0
+      semver: 7.5.4
       validate-npm-package-name: 5.0.0
     dev: true
 
@@ -2383,6 +2371,7 @@ packages:
       '@vue/language-core': 1.8.27(typescript@5.4.3)
       semver: 7.6.0
       typescript: 5.4.3
+    dev: false
 
   /vue-tsc@2.0.7(typescript@5.4.3):
     resolution: {integrity: sha512-LYa0nInkfcDBB7y8jQ9FQ4riJTRNTdh98zK/hzt4gEpBZQmf30dPhP+odzCa+cedGz6B/guvJEd0BavZaRptjg==}
@@ -2394,7 +2383,6 @@ packages:
       '@vue/language-core': 2.0.7(typescript@5.4.3)
       semver: 7.6.0
       typescript: 5.4.3
-    dev: false
 
   /vue@3.4.21(typescript@5.4.3):
     resolution: {integrity: sha512-5hjyV/jLEIKD/jYl4cavMcnzKwjMKohureP8ejn3hhEjwhWIhWeuzL2kJAjzl/WyVsgPY56Sy4Z40C3lVshxXA==}

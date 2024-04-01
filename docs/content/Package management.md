@@ -1,5 +1,17 @@
 # Package management
 
+### Updates
+
+TLDR:
+
+```sh
+pnpm syncpack fix-mismatches && pnpm update --recursive --latest --interactive
+```
+
+```sh
+pnpm syncpack fix-mismatches && pnpm update --recursive --latest
+```
+
 ## Syncpack
 
 [Syncpack](https://jamiemason.github.io/syncpack/) allows you to maintain consistent dependency versions in large JavaScript monorepos.
@@ -10,7 +22,7 @@ pnpm add -D --workspace-root syncpack
 
 - `pnpm syncpack list`
 - `pnpm syncpack list-mismatches`
-- `pnpm syncpack fix-mismatches`
+- `pnpm syncpack fix-mismatches` + `pnpm upgrade`
 - `pnpm syncpack update`
 
 ### Local packages
