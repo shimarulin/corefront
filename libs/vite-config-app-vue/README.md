@@ -1,4 +1,4 @@
-# @corefront/vite-config-app
+# @corefront/vite-config-app-vue
 
 Vite configuration for target applications (Vue 3 + TypeScript + Vite)
 
@@ -7,10 +7,10 @@ Vite configuration for target applications (Vue 3 + TypeScript + Vite)
 Use the default values in `vite.config.ts`:
 
 ```ts
-import { createViteConfigApp } from '@corefront/vite-config-app'
+import { defineConfigVueApp } from '@corefront/vite-config-app-vue'
 
 // https://vitejs.dev/config/
-export default createViteConfigApp()
+export default defineConfigVueApp()
 ```
 
 Merge default Vite application configuration with custom options in `vite.config.ts`:
@@ -20,11 +20,11 @@ pnpm add -D deepmerge
 ```
 
 ```ts
-import { createViteConfigApp } from '@corefront/vite-config-app'
+import { defineConfigVueApp } from '@corefront/vite-config-app-vue'
 import merge from 'deepmerge'
 
 // https://vitejs.dev/config/
-export default createViteConfigApp(({ cfg }) => {
+export default defineConfigVueApp(({ cfg }) => {
   return merge(cfg, {
     build: {
       lib: {
