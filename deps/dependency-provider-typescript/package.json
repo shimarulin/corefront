@@ -1,0 +1,10 @@
+{
+  "name": "@corefront/dependency-provider-typescript",
+  "version": "0.0.0",
+  "description": "TypeScript dependency provider",
+  "dependencies": {
+    "typescript": "^5.2.2"
+  },
+  "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
+  "license": "ISC"
+}

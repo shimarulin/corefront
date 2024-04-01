@@ -1,7 +1,7 @@
 {
-  "name": "@corefront/vite-config-app",
+  "name": "@corefront/vite-config-app-vue",
   "version": "0.0.0",
-  "description": "Core Vite configuration for platform apps",
+  "description": "Vite: Vue + TypeScript configuration for platform apps",
   "type": "module",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -15,13 +15,7 @@
     "build": "tsc --noEmit && vite build"
   },
   "dependencies": {
-    "@vitejs/plugin-vue": "^5.0.4",
-    "vue-tsc": "^2.0.6"
-  },
-  "devDependencies": {
-    "typescript": "^5.2.2",
-    "vite": "^5.2.0",
-    "vite-plugin-dts": "^3.8.1"
+    "@corefront/vite-config-base": "workspace:^"
   },
   "keywords": [],
   "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",

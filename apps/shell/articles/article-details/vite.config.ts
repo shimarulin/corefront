@@ -1,4 +1,4 @@
-import { createViteConfigApp } from '@corefront/vite-config-app'
+import { defineConfigVueApp } from '@corefront/vite-config-app-vue'
 
 // https://vitejs.dev/config/
-export default createViteConfigApp()
+export default defineConfigVueApp()

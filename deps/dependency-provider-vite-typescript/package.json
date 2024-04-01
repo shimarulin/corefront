@@ -1,0 +1,12 @@
+{
+  "name": "@corefront/dependency-provider-vite-typescript",
+  "version": "0.0.0",
+  "description": "Vite + TypeScript dependency provider",
+  "dependencies": {
+    "@corefront/dependency-provider-typescript": "workspace:^",
+    "vite": "^5.2.0",
+    "vite-plugin-dts": "^3.8.1"
+  },
+  "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
+  "license": "ISC"
+}
