@@ -43,3 +43,8 @@ Use [Syncpack](Package%20management.md#Syncpack) to format `package.json` files.
   ]
 }
 ```
+
+
+## JavaScript/TypeScript
+
+- [ESLint Stylistic](https://eslint.style/)
