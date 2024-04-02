@@ -2,10 +2,16 @@
   "name": "@corefront/vite-config-base",
   "version": "0.0.0",
   "description": "Vite: base config",
-  "types": "./main.d.ts",
+  "license": "ISC",
+  "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./main.d.ts"
+      }
+    }
+  },
   "devDependencies": {
     "typescript": "^5.3.3"
-  },
-  "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
-  "license": "ISC"
+  }
 }

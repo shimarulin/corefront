@@ -1,13 +1,15 @@
 {
   "name": "corefront",
-  "private": true,
   "description": "",
+  "license": "ISC",
+  "private": true,
+  "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
   "scripts": {
+    "fmt": "pnpm run fmt:pkgs",
+    "fmt:pkgs": "syncpack format",
     "pkgs:up": "pnpm syncpack fix-mismatches && pnpm update --recursive --latest",
     "pkgs:up:i": "pnpm syncpack fix-mismatches && pnpm update --recursive --interactive --latest"
   },
-  "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
-  "license": "ISC",
   "devDependencies": {
     "syncpack": "^12.3.0"
   }

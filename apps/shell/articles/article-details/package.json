@@ -2,11 +2,17 @@
   "name": "@corefront/article-details",
   "version": "0.0.0",
   "type": "module",
-  "module": "./src/main.ts",
-  "types": "./dist/main.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/main.d.ts",
+        "default": "./src/main.ts"
+      }
+    }
+  },
   "scripts": {
-    "postinstall": "vite build",
-    "build": "vue-tsc && vite build"
+    "build": "vue-tsc && vite build",
+    "postinstall": "vite build"
   },
   "dependencies": {
     "@vitejs/plugin-vue": "^5.0.4",

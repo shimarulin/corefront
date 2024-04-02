@@ -1,3 +1,10 @@
+# Code formatting
+
+## package.json
+
+Use [Syncpack](Package%20management.md#Syncpack) to format `package.json` files. Example format options config:
+
+```json title:.syncpackrc
 {
   "sortFirst": [
     "name",
@@ -33,18 +40,6 @@
     "devDependencies",
     "optionalDependencies",
     "bundledDependencies"
-  ],
-  "versionGroups": [
-    {
-      "label": "Use workspace protocol when developing local packages",
-      "dependencies": [
-        "@corefront/**"
-      ],
-      "dependencyTypes": [
-        "dev",
-        "prod"
-      ],
-      "pinVersion": "workspace:*"
-    }
   ]
 }
+```

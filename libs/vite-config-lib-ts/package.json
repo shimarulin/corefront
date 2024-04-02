@@ -2,17 +2,23 @@
   "name": "@corefront/vite-config-lib-ts",
   "version": "0.0.0",
   "description": "Vite: TypeScript library config",
+  "license": "ISC",
+  "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
   "type": "module",
-  "types": "./dist/index.d.ts",
   "exports": {
-    "import": "./dist/index.js"
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "prepare": "vite build",
-    "build": "tsc --noEmit && vite build"
+    "build": "tsc --noEmit && vite build",
+    "prepare": "vite build"
   },
   "devDependencies": {
     "@corefront/vite-config-base": "workspace:*",
@@ -20,7 +26,5 @@
     "vite": "^5.2.0",
     "vite-plugin-dts": "^3.8.1",
     "vite-plugin-external": "^4.3.0"
-  },
-  "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
-  "license": "ISC"
+  }
 }
