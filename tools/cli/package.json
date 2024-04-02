@@ -2,11 +2,23 @@
   "name": "@corefront/cli",
   "version": "1.0.0",
   "description": "Command line tool for Corefront project maintenance",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
+  "license": "ISC",
   "author": "Vyacheslav Shimarulin",
-  "license": "ISC"
+  "bin": {
+    "corefront": "./bin/run.js",
+    "cx": "./bin/run.js"
+  },
+  "type": "module",
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "scripts": {
+    "build": "swc --delete-dir-on-start --strip-leading-paths -d dist src",
+    "postinstall": "pnpm run build"
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.3.12",
+    "@swc/core": "^1.4.11"
+  }
 }
