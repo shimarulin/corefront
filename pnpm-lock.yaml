@@ -8,9 +8,6 @@ importers:
 
   .:
     devDependencies:
-      '@corefront/cli':
-        specifier: workspace:^
-        version: link:tools/cli
       syncpack:
         specifier: ^12.3.0
         version: 12.3.0

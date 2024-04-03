@@ -5,7 +5,6 @@
   "license": "ISC",
   "author": "Vyacheslav Shimarulin",
   "bin": {
-    "corefront": "./bin/run.js",
     "cx": "./bin/run.js"
   },
   "type": "module",
@@ -15,7 +14,7 @@
   ],
   "scripts": {
     "build": "swc --delete-dir-on-start --strip-leading-paths -d dist src",
-    "postinstall": "pnpm run build"
+    "postinstall": "pnpm run build && pnpm setup && pnpm link --global"
   },
   "devDependencies": {
     "@swc/cli": "^0.3.12",
