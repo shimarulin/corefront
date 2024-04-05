@@ -16,5 +16,5 @@ import pkg from './package.json' with { type: 'json' }
 //   }
 // })
 export default defineConfigTsLib({
-  external: Object.keys(pkg.devDependencies)
+  external: [...Object.keys(pkg.devDependencies), ...Object.keys(pkg.dependencies)]
 })
