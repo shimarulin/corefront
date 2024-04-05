@@ -12,12 +12,36 @@
     "bin",
     "dist"
   ],
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
   "scripts": {
-    "build": "swc --delete-dir-on-start --strip-leading-paths -d dist src",
-    "postinstall": "pnpm run build && pnpm setup && pnpm link --global"
+    "dev": "pnpm run build --watch",
+    "build": "swc --delete-dir-on-start --strip-leading-paths --out-file-extension js -d dist src",
+    "postinstall": "pnpm run build && pnpm setup && pnpm link --global",
+    "declaration": "tsc --declaration --emitDeclarationOnly && tsc-alias"
   },
   "devDependencies": {
     "@swc/cli": "^0.3.12",
-    "@swc/core": "^1.4.11"
+    "@swc/core": "^1.4.11",
+    "@types/inquirer": "^9.0.7",
+    "@types/yargs": "^17.0.32",
+    "chokidar": "^3.6.0",
+    "concurrently": "^8.2.2",
+    "readdirp": "^3.6.0",
+    "tsc-alias": "^1.8.8",
+    "type-fest": "^4.15.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "fast-glob": "^3.3.2",
+    "find-up": "^7.0.0",
+    "inquirer": "^9.2.17",
+    "yargs": "^17.7.2"
   }
 }

@@ -1,0 +1,27 @@
+{
+  "name": "@corefront/cli-plugin-mkplg",
+  "version": "1.0.0",
+  "description": "Command line tool for Corefront project maintenance: mkplg plugin",
+  "license": "ISC",
+  "author": "Vyacheslav Shimarulin",
+  "keywords": [],
+  "scripts": {
+    "dev": "pnpm run build --watch",
+    "build": "swc --delete-dir-on-start --strip-leading-paths --out-file-extension js -d dist src",
+    "postinstall": "pnpm run build"
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.3.12",
+    "@swc/core": "^1.4.11",
+    "@types/inquirer": "^9.0.7",
+    "@types/yargs": "^17.0.32",
+    "chokidar": "^3.6.0",
+    "readdirp": "^3.6.0",
+    "type-fest": "^4.15.0"
+  },
+  "dependencies": {
+    "inquirer": "^9.2.17",
+    "simple-scaffold": "^2.2.0",
+    "yargs": "^17.7.2"
+  }
+}

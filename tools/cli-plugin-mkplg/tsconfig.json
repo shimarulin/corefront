@@ -11,10 +11,7 @@
       "baseUrl": "./src",
       "paths": {
         "~/*": ["./*"]
-      },
-      "outDir": "dist",
-      // "rootDir": "src",
-      // "composite": true
+      }
     },
     "exclude": ["node_modules", "dist", "**/__tests__", "**/*.test.ts", "**/*.spec.ts"]
   }

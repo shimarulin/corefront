@@ -11,6 +11,8 @@ node_modules
 
 # Build directories and files
 dist
+tsconfig.tsbuildinfo
+
 
 # Obsidian settings
 .obsidian
