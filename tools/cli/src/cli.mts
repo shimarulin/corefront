@@ -1,13 +1,12 @@
 import { resolve } from 'node:path'
-import select, { Separator } from '@inquirer/select'
+import select from '@inquirer/select'
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
-import type { CommandModule } from 'yargs'
 import type { PackageJson } from 'type-fest'
 import { printf } from '~/log.mjs'
 import { getCtx } from '~/ctx.mjs'
+import type { DefinedCommandModule } from '~/types.mjs'
 
-type DefinedCommandModule = Required<Pick<CommandModule, 'command' | 'describe' | 'handler'>>
 type CommandModuleMap = {
   [key: string]: DefinedCommandModule
 }

@@ -1,4 +1,8 @@
 import type { PackageJson } from 'type-fest'
+import type { CommandModule } from 'yargs'
+
+export type DefinedCommandModule<T = {}, U = {}> = Required<Pick<CommandModule<T, U>, 'command' | 'describe' | 'handler' | 'builder'>> & Pick<CommandModule<T, U>, 'aliases' | 'deprecated'>
+export type DefineCommandModule<T = {}, U = {}> = (ctx: Ctx) => DefinedCommandModule<T, U>
 
 export interface PackageEntryBase {
   dir: string
