@@ -75,6 +75,13 @@ importers:
         version: 2.0.7(typescript@5.4.3)
 
   libs/cli-config:
+    dependencies:
+      find-up:
+        specifier: ^7.0.0
+        version: 7.0.0
+      readdirp:
+        specifier: ^3.6.0
+        version: 3.6.0
     devDependencies:
       '@corefront/vite-config-lib-ts':
         specifier: workspace:*
@@ -93,14 +100,13 @@ importers:
         version: 3.8.1(typescript@5.4.3)(vite@5.2.7)
 
   libs/vite-config-app-vue:
-    dependencies:
-      '@corefront/vite-config-lib-ts':
-        specifier: workspace:*
-        version: link:../vite-config-lib-ts
     devDependencies:
       '@corefront/vite-config-base':
         specifier: workspace:*
         version: link:../vite-config-base
+      '@corefront/vite-config-lib-ts':
+        specifier: workspace:*
+        version: link:../vite-config-lib-ts
       '@vitejs/plugin-vue':
         specifier: ^5.0.4
         version: 5.0.4(vite@5.2.7)(vue@3.4.21)
@@ -3056,7 +3062,6 @@ packages:
     engines: {node: '>=8.10.0'}
     dependencies:
       picomatch: 2.3.1
-    dev: true
 
   /regenerator-runtime@0.14.1:
     resolution: {integrity: sha512-dYnhHh0nJoMfnkZs6GmmhFknAGRrLznOu5nc9ML+EJxGvrx6H7teuevqVqCuPcPK//3eDrrjQhehXVx9cnkGdw==}

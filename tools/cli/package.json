@@ -8,7 +8,6 @@
     "cx": "./bin/run.mjs"
   },
   "type": "module",
-  "module": "./dist/index.js",
   "types": "./src/types.d.mts",
   "exports": {
     ".": {
