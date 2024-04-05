@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+      "declaration": true,
+      "importHelpers": true,
+      "module": "NodeNext",
+      "strict": true,
+      "target": "ESNext",
+      "esModuleInterop": true,
+      "moduleResolution": "NodeNext",
+      "resolveJsonModule": true,
+      "baseUrl": "./src",
+      "paths": {
+        "~/*": ["./*"]
+      },
+      "outDir": "dist",
+      // "rootDir": "src",
+      // "composite": true
+    },
+    "exclude": ["node_modules", "dist", "**/__tests__", "**/*.test.ts", "**/*.spec.ts"]
+  }

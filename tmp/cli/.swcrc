@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/swcrc",
+  "jsc": {
+    "target": "esnext",
+    "parser": {
+      "syntax": "typescript",
+      "tsx": false,
+      "decorators": false,
+      "dynamicImport": true
+    },
+    "baseUrl": "./src",
+    "paths": {
+      "~/*": ["./*"]
+    }
+  },
+  "minify": false,
+  "isModule": true,
+  "module": {
+    "type": "es6"
+  }
+}
