@@ -1,0 +1,7 @@
+{
+  "name": "@corefront/tsconfig-preset-tools",
+  "version": "1.0.0",
+  "description": "Corefront TypeScript preset for use in project tools",
+  "author": "Vyacheslav Shimarulin",
+  "license": "ISC"
+}

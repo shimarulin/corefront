@@ -99,6 +99,8 @@ importers:
         specifier: ^3.8.1
         version: 3.8.1(typescript@5.4.3)(vite@5.2.7)
 
+  libs/tsconfig-preset-tools: {}
+
   libs/vite-config-app-vue:
     devDependencies:
       '@corefront/vite-config-base':
@@ -162,6 +164,9 @@ importers:
         specifier: ^17.7.2
         version: 17.7.2
     devDependencies:
+      '@corefront/tsconfig-preset-tools':
+        specifier: workspace:*
+        version: link:../../libs/tsconfig-preset-tools
       '@swc/cli':
         specifier: ^0.3.12
         version: 0.3.12(@swc/core@1.4.11)(chokidar@3.6.0)
@@ -202,6 +207,9 @@ importers:
       '@corefront/cli':
         specifier: workspace:*
         version: link:../cli
+      '@corefront/tsconfig-preset-tools':
+        specifier: workspace:^
+        version: link:../../libs/tsconfig-preset-tools
       '@swc/cli':
         specifier: ^0.3.12
         version: 0.3.12(@swc/core@1.4.11)(chokidar@3.6.0)
