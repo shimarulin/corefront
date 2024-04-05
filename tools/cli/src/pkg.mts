@@ -1,10 +1,6 @@
 import { dirname } from 'node:path'
 import { findUp } from 'find-up'
-
-export interface PackageEntryBase {
-  dir: string
-  pkg: string
-}
+import type { PackageEntryBase } from '~/types.mjs'
 
 export const findPackageEntryUp = async (cwd: string | URL = process.cwd()): Promise<PackageEntryBase | null> => {
   const currentPackage = await findUp('package.json', {

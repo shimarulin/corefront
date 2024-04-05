@@ -1,0 +1,25 @@
+import type { PackageJson } from 'type-fest'
+
+export interface PackageEntryBase {
+  dir: string
+  pkg: string
+}
+
+export interface ProjectPackagesBase {
+  root: PackageEntryBase
+  current: PackageEntryBase | null
+}
+
+export interface PackageEntry extends PackageEntryBase {
+  manifest: PackageJson
+}
+
+export interface ProjectPackages {
+  root: PackageEntry
+  current: PackageEntry | null
+  entries: PackageEntry[]
+}
+
+export interface Ctx {
+  packages: ProjectPackages | null
+}

@@ -10,12 +10,17 @@
     },
     "baseUrl": "./src",
     "paths": {
-      "~/*": ["./*"]
+      "~/*": [
+        "./*"
+      ]
     }
   },
   "minify": false,
   "isModule": true,
   "module": {
     "type": "es6"
-  }
+  },
+  "exclude": [
+    ".*\\.d\\.m*ts$"
+  ]
 }

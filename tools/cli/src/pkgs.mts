@@ -1,7 +1,8 @@
 import { dirname } from 'node:path'
 import readdirp from 'readdirp'
 import type { PackageJson } from 'type-fest'
-import { findPackageEntryUp, PackageEntryBase } from '~/pkg.mjs'
+import { findPackageEntryUp } from '~/pkg.mjs'
+import type { PackageEntryBase } from '~/types.mjs'
 
 export interface ProjectPackagesBase {
   root: PackageEntryBase
