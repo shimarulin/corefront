@@ -5,11 +5,13 @@
   "license": "ISC",
   "author": "Vyacheslav Shimarulin",
   "type": "module",
-  "module": "./dist/main.js",
+  "module": "./dist/main.mjs",
   "exports": {
     ".": {
       "import": {
-        "default": "./dist/main.js"
+        "node": "./dist/main.mjs",
+        "import": "./dist/main.mjs",
+        "default": "./dist/main.mjs"
       }
     }
   },
@@ -17,14 +19,13 @@
     "dist"
   ],
   "scripts": {
-    "build": "swc --delete-dir-on-start --strip-leading-paths --out-file-extension js -d dist src",
+    "build": "swc --delete-dir-on-start --strip-leading-paths --out-file-extension mjs -d dist src",
     "dev": "pnpm run build --watch",
     "postinstall": "pnpm run build"
   },
   "dependencies": {
-    "inquirer": "^9.2.17",
-    "simple-scaffold": "^2.2.0",
-    "yargs": "^17.7.2"
+    "@inquirer/prompts": "^4.3.2",
+    "simple-scaffold": "^2.2.0"
   },
   "devDependencies": {
     "@corefront/cli": "workspace:*",
@@ -33,7 +34,7 @@
     "@types/inquirer": "^9.0.7",
     "@types/yargs": "^17.0.32",
     "chokidar": "^3.6.0",
-    "readdirp": "^3.6.0",
-    "type-fest": "^4.15.0"
+    "type-fest": "^4.15.0",
+    "typescript": "^5.3.3"
   }
 }
