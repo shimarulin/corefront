@@ -1,70 +1,37 @@
-# @corefront/cli
+# @corefront/cli-plugin-mkplg
 
-> Command line tool for Corefront project maintenance
+> Command line tool for Corefront project maintenance: mkplg plugin
 
 ## Install
 
-### Project
+### In local worspace
 
-In project root
+Nothing
 
-```sh
-pnpm add -D --workspace-root --workspace @corefront/cli
-```
+### New project
 
-### Global
-
-Make sure that pnpm global bin directory is exist
+In new project root
 
 ```sh
-pnpm setup
-```
-
-Run this command in the package directory
-
-```sh
-pnpm link --global
+pnpm add -D --workspace-root @corefront/cli @corefront/cli-plugin-mkplg
 ```
 
 ## Usage
 
-Run command by `npx` for local installation
-
 ```sh
-npx cx
+cx mkplg
 ```
-
-or directly for global
-
-```sh
-cx
-```
-
 
 ## Uninstall
 
-### Global
-
 ```sh
-pnpm uninstall --global @corefront/cli
+pnpm uninstall @corefront/cli-plugin-mkplg
 ```
 
-## Common issues
+## Development
 
-### WARN link:...corefront/tools/cli has no binaries
-
-`pnpm link --global` show warning:
-
-```
-WARN  link:/home/username/corefront/tools/cli has no binaries
-```
-
-Don't worry, everything just works. See https://github.com/pnpm/pnpm/issues/4761 for updates.
-
-### `cx` is stil present after `pnpm uninstall --global @corefront/cli`
-
-Sometime this happens, use:
-
-```sh
-rm -f "$(pnpm bin -g)/cx"
-```
+- [yargs](https://yargs.js.org/)
+- [yargs/y18n](https://github.com/yargs/y18n)
+- [Inquirer.js](https://github.com/SBoudrias/Inquirer.js)
+- [Handlebars](https://handlebarsjs.com/)
+- [simple-scaffold](https://github.com/chenasraf/simple-scaffold)

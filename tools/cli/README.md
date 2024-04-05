@@ -68,3 +68,10 @@ Sometime this happens, use:
 ```sh
 rm -f "$(pnpm bin -g)/cx"
 ```
+
+## Development
+
+- [yargs](https://yargs.js.org/)
+- [yargs/y18n](https://github.com/yargs/y18n)
+- [Inquirer.js](https://github.com/SBoudrias/Inquirer.js)
+- [Handlebars](https://handlebarsjs.com/)
