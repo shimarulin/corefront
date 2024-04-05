@@ -4,6 +4,7 @@
   "description": "Vite: base config",
   "license": "ISC",
   "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": {

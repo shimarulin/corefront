@@ -1,7 +1,7 @@
 {
-  "name": "@corefront/vite-config-lib-ts",
+  "name": "@corefront/cli-config",
   "version": "0.0.0",
-  "description": "Vite: TypeScript library config",
+  "description": "Corefront CLI configuration library",
   "license": "ISC",
   "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
   "type": "module",
@@ -23,12 +23,13 @@
     "build": "tsc --noEmit && vite build",
     "prepare": "vite build"
   },
+  "dependencies": {
+  },
   "devDependencies": {
-    "@corefront/vite-config-base": "workspace:*",
+    "@corefront/vite-config-lib-ts": "workspace:*",
+    "@vitejs/plugin-vue": "^5.0.4",
     "typescript": "^5.3.3",
     "vite": "^5.2.0",
-    "vite-plugin-dts": "^3.8.1",
-    "vite-plugin-external": "^4.3.0",
-    "vite-tsconfig-paths": "^4.3.2"
+    "vite-plugin-dts": "^3.8.1"
   }
 }

@@ -8,9 +8,8 @@
 - [TypeScript: JavaScript With Syntax For Types.](https://www.typescriptlang.org/)
 - [Vite | Next Generation Frontend Tooling](https://vitejs.dev/)
 - [Rollup](https://rollupjs.org/)
+- [Rust-based platform for the Web – SWC](https://swc.rs/)
 - [Vitest | Next Generation testing framework](https://vitest.dev/)
-- [Consistency Made Simple : PLOP](https://plopjs.com/)
-- [oclif: The Open CLI Framework](https://oclif.io/)
 - [Histoire | Histoire](https://histoire.dev/) or [Storybook: Frontend workshop for UI development](https://storybook.js.org/)
 
 ### TypeScript
@@ -21,6 +20,16 @@
 ## Libs
 
 - [Vue.js - The Progressive JavaScript Framework | Vue.js](https://vuejs.org/)
+
+CLI
+
+- [yargs](https://yargs.js.org/)
+- [GitHub - yargs/y18n: :ledger: the bare-bones i18n library used by yargs](https://github.com/yargs/y18n)
+- [GitHub - SBoudrias/Inquirer.js: A collection of common interactive command line user interfaces.](https://github.com/SBoudrias/Inquirer.js)
+- [Handlebars](https://handlebarsjs.com/)
+- [Consistency Made Simple : PLOP](https://plopjs.com/)
+- [GitHub - chenasraf/simple-scaffold: Generate any file structure - from single components to entire app boilerplates, with a single command.](https://github.com/chenasraf/simple-scaffold)
+- [oclif: The Open CLI Framework](https://oclif.io/)
 
 ## References
 
@@ -52,4 +61,9 @@
 
 - [pinia-colada/playground/src at main · posva/pinia-colada · GitHub](https://github.com/posva/pinia-colada/tree/main/playground/src)
 - [GitHub - posva/unplugin-vue-router: Next Generation file based typed routing for Vue Router](https://github.com/posva/unplugin-vue-router)
-- 
+
+### UI
+
+- [FormKit ⚡️ The open-source form framework for Vue](https://formkit.com/)
+- [Drag & Drop • by FormKit](https://drag-and-drop.formkit.com/)
+- [GitHub - vuestorefront/vue-storefront: Alokai is a Frontend as a Service solution that simplifies composable commerce. It connects all the technologies needed to build and deploy fast & scalable ecommerce frontends. It guides merchants to deliver exceptional customer experiences quickly and easily.](https://github.com/vuestorefront/vue-storefront)
