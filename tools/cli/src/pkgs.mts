@@ -1,7 +1,7 @@
 import { dirname } from 'node:path'
 import readdirp from 'readdirp'
 import type { PackageJson } from 'type-fest'
-import { findPackageEntryUp, PackageEntryBase } from '~/ctx/pkg.js'
+import { findPackageEntryUp, PackageEntryBase } from '~/pkg.mjs'
 
 export interface ProjectPackagesBase {
   root: PackageEntryBase
@@ -21,19 +21,19 @@ export interface ProjectPackages {
 export const findProjectPackagesBase = async (cwd: string | URL = process.cwd()): Promise<ProjectPackagesBase | null> => {
   const currentPackageEntry = await findPackageEntryUp(cwd)
   const parentPackageEntry = currentPackageEntry
-  ? await findPackageEntryUp(dirname(currentPackageEntry?.dir))
-  : null
+    ? await findPackageEntryUp(dirname(currentPackageEntry?.dir))
+    : null
 
   return parentPackageEntry
     ? {
-        root: parentPackageEntry,
-        current: currentPackageEntry
-      }
+      root: parentPackageEntry,
+      current: currentPackageEntry
+    }
     : currentPackageEntry
       ? {
-          root: currentPackageEntry,
-          current: null
-        }
+        root: currentPackageEntry,
+        current: null
+      }
       : null
 }
 
@@ -53,8 +53,8 @@ export const findPackageEntryBaseList = async (dir: string): Promise<PackageEntr
 }
 
 export const getPackageEntryList = async (packageEntryList: PackageEntryBase[]): Promise<PackageEntry[]> => {
-  return Promise.all(packageEntryList.map(async ({dir, pkg}): Promise<PackageEntry> => {
-    const manifest = await import(pkg, {with: { type: "json" }}).then(module => {
+  return Promise.all(packageEntryList.map(async ({ dir, pkg }): Promise<PackageEntry> => {
+    const manifest = await import(pkg, { with: { type: "json" } }).then(module => {
       return module.default as PackageJson
     })
     return {
@@ -68,21 +68,21 @@ export const getPackageEntryList = async (packageEntryList: PackageEntryBase[]):
 export const getProjectPackages = async (cwd: string | URL = process.cwd()): Promise<ProjectPackages | null> => {
   const projectPackagesBase = await findProjectPackagesBase(cwd)
   const entries = projectPackagesBase
-  ? await getPackageEntryList(await findPackageEntryBaseList(projectPackagesBase.root.dir))
-  : []
+    ? await getPackageEntryList(await findPackageEntryBaseList(projectPackagesBase.root.dir))
+    : []
 
 
   return projectPackagesBase
     ? {
-    root: projectPackagesBase.root && {
-      ...projectPackagesBase.root,
-      manifest: entries.find(entry => entry.pkg === projectPackagesBase.root.pkg)?.manifest || {},
-    },
-    current: projectPackagesBase.current && {
-      ...projectPackagesBase.current,
-      manifest: entries.find(entry => entry.pkg === projectPackagesBase.current?.pkg)?.manifest || {},
-    },
-    entries
-  }
-  : null
+      root: projectPackagesBase.root && {
+        ...projectPackagesBase.root,
+        manifest: entries.find(entry => entry.pkg === projectPackagesBase.root.pkg)?.manifest || {},
+      },
+      current: projectPackagesBase.current && {
+        ...projectPackagesBase.current,
+        manifest: entries.find(entry => entry.pkg === projectPackagesBase.current?.pkg)?.manifest || {},
+      },
+      entries
+    }
+    : null
 }

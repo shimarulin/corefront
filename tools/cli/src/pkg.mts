@@ -1,4 +1,4 @@
-import path from 'node:path'
+import { dirname } from 'node:path'
 import { findUp } from 'find-up'
 
 export interface PackageEntryBase {
@@ -12,7 +12,7 @@ export const findPackageEntryUp = async (cwd: string | URL = process.cwd()): Pro
   })
 
   return currentPackage ? {
-    dir: path.dirname(currentPackage),
+    dir: dirname(currentPackage),
     pkg: currentPackage
   } : null
 }

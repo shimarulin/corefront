@@ -1,4 +1,4 @@
-import { ProjectPackages, getProjectPackages } from "~/ctx/pkgs.js";
+import { ProjectPackages, getProjectPackages } from "~/pkgs.mjs";
 
 
 export interface Ctx {

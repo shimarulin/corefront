@@ -5,26 +5,25 @@
   "license": "ISC",
   "author": "Vyacheslav Shimarulin",
   "bin": {
-    "cx": "./bin/run.js"
+    "cx": "./bin/run.mjs"
   },
   "type": "module",
   "files": [
     "bin",
     "dist"
   ],
-  "exports": {
-    ".": {
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      }
-    }
-  },
   "scripts": {
+    "build": "swc --delete-dir-on-start --strip-leading-paths --out-file-extension mjs -d dist src",
+    "declaration": "tsc --declaration --emitDeclarationOnly && tsc-alias",
     "dev": "pnpm run build --watch",
-    "build": "swc --delete-dir-on-start --strip-leading-paths --out-file-extension js -d dist src",
-    "postinstall": "pnpm run build && pnpm setup && pnpm link --global",
-    "declaration": "tsc --declaration --emitDeclarationOnly && tsc-alias"
+    "postinstall": "pnpm run build && pnpm setup && pnpm link --global"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^4.3.1",
+    "@inquirer/select": "^2.2.1",
+    "fast-glob": "^3.3.2",
+    "find-up": "^7.0.0",
+    "yargs": "^17.7.2"
   },
   "devDependencies": {
     "@swc/cli": "^0.3.12",
@@ -37,11 +36,5 @@
     "tsc-alias": "^1.8.8",
     "type-fest": "^4.15.0",
     "typescript": "^5.3.3"
-  },
-  "dependencies": {
-    "fast-glob": "^3.3.2",
-    "find-up": "^7.0.0",
-    "inquirer": "^9.2.17",
-    "yargs": "^17.7.2"
   }
 }
