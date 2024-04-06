@@ -20,3 +20,8 @@ and add the following `tsconfig.json` to the package directory:
   }
 }
 ```
+
+## Links
+
+- https://www.typescriptlang.org/docs/handbook/tsconfig-json.html#tsconfig-bases
+- https://www.typescriptlang.org/tsconfig
