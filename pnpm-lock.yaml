@@ -10,7 +10,10 @@ importers:
     devDependencies:
       syncpack:
         specifier: ^12.3.0
-        version: 12.3.0
+        version: 12.3.0(typescript@5.4.3)
+      typescript:
+        specifier: ^5.3.3
+        version: 5.4.3
 
   apps/shell/articles/article-details:
     dependencies:
@@ -30,9 +33,6 @@ importers:
       '@corefront/vite-config-app-vue':
         specifier: workspace:*
         version: link:../../../../libs/vite-config-app-vue
-      typescript:
-        specifier: ^5.3.3
-        version: 5.4.3
 
   hosts/shell:
     dependencies:
@@ -64,9 +64,6 @@ importers:
       cross-env:
         specifier: ^7.0.3
         version: 7.0.3
-      typescript:
-        specifier: ^5.3.3
-        version: 5.4.3
       vite:
         specifier: ^5.2.0
         version: 5.2.7(@types/node@20.12.2)
@@ -89,9 +86,6 @@ importers:
       '@vitejs/plugin-vue':
         specifier: ^5.0.4
         version: 5.0.4(vite@5.2.7)(vue@3.4.21)
-      typescript:
-        specifier: ^5.3.3
-        version: 5.4.3
       vite:
         specifier: ^5.2.0
         version: 5.2.7(@types/node@20.12.2)
@@ -112,9 +106,6 @@ importers:
       '@vitejs/plugin-vue':
         specifier: ^5.0.4
         version: 5.0.4(vite@5.2.7)(vue@3.4.21)
-      typescript:
-        specifier: ^5.3.3
-        version: 5.4.3
       vite:
         specifier: ^5.2.0
         version: 5.2.7(@types/node@20.12.2)
@@ -122,20 +113,13 @@ importers:
         specifier: ^3.8.1
         version: 3.8.1(typescript@5.4.3)(vite@5.2.7)
 
-  libs/vite-config-base:
-    devDependencies:
-      typescript:
-        specifier: ^5.3.3
-        version: 5.4.3
+  libs/vite-config-base: {}
 
   libs/vite-config-lib-ts:
     devDependencies:
       '@corefront/vite-config-base':
         specifier: workspace:*
         version: link:../vite-config-base
-      typescript:
-        specifier: ^5.3.3
-        version: 5.4.3
       vite:
         specifier: ^5.2.0
         version: 5.2.7(@types/node@20.12.2)
@@ -191,9 +175,6 @@ importers:
       type-fest:
         specifier: ^4.15.0
         version: 4.15.0
-      typescript:
-        specifier: ^5.3.3
-        version: 5.4.3
 
   tools/cli-plugin-mkplg:
     dependencies:
@@ -228,9 +209,6 @@ importers:
       type-fest:
         specifier: ^4.15.0
         version: 4.15.0
-      typescript:
-        specifier: ^5.3.3
-        version: 5.4.3
 
 packages:
 
@@ -1708,7 +1686,7 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
-  /cosmiconfig@9.0.0:
+  /cosmiconfig@9.0.0(typescript@5.4.3):
     resolution: {integrity: sha512-itvL5h8RETACmOTFc4UfIyB2RfEHi71Ax6E/PivVxq9NseKbOWpeyHEOIbmAw1rs8Ak0VursQNww7lf7YtUwzg==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -1721,6 +1699,7 @@ packages:
       import-fresh: 3.3.0
       js-yaml: 4.1.0
       parse-json: 5.2.0
+      typescript: 5.4.3
     dev: true
 
   /cross-env@7.0.3:
@@ -3422,7 +3401,7 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  /syncpack@12.3.0:
+  /syncpack@12.3.0(typescript@5.4.3):
     resolution: {integrity: sha512-Gz2uGn96OmGfVVlKztvFac1EJYjP+WptQ2ohA6Uf48C6qLkhSayhkdujKQ6q7bGOTy8HSGI0iDfwfCJu6wvRig==}
     engines: {node: '>=16'}
     hasBin: true
@@ -3430,7 +3409,7 @@ packages:
       '@effect/schema': 0.56.1(effect@2.0.0-next.62)(fast-check@3.15.0)
       chalk: 4.1.2
       commander: 11.1.0
-      cosmiconfig: 9.0.0
+      cosmiconfig: 9.0.0(typescript@5.4.3)
       effect: 2.0.0-next.62
       enquirer: 2.4.1
       fast-check: 3.15.0

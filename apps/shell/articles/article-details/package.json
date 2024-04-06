@@ -21,7 +21,6 @@
     "vue-tsc": "^2.0.6"
   },
   "devDependencies": {
-    "@corefront/vite-config-app-vue": "workspace:*",
-    "typescript": "^5.3.3"
+    "@corefront/vite-config-app-vue": "workspace:*"
   }
 }

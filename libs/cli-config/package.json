@@ -31,7 +31,6 @@
   "devDependencies": {
     "@corefront/vite-config-lib-ts": "workspace:*",
     "@vitejs/plugin-vue": "^5.0.4",
-    "typescript": "^5.3.3",
     "vite": "^5.2.0",
     "vite-plugin-dts": "^3.8.1"
   }

@@ -11,8 +11,5 @@
         "types": "./main.d.ts"
       }
     }
-  },
-  "devDependencies": {
-    "typescript": "^5.3.3"
   }
 }

@@ -56,11 +56,7 @@ Lib `tsconfig.json`:
   "scripts": {
     "prepare": "pnpm run build",
     "build": "tsc -b"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "typescript": "^5.2.2",
-  },
+  }
 }
 ```
 
