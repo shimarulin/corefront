@@ -5,13 +5,10 @@
   "license": "ISC",
   "author": "Vyacheslav Shimarulin",
   "type": "module",
-  "module": "./dist/main.mjs",
   "exports": {
     ".": {
       "import": {
-        "node": "./dist/main.mjs",
-        "import": "./dist/main.mjs",
-        "default": "./dist/main.mjs"
+        "import": "./dist/main.mjs"
       }
     }
   },
@@ -32,7 +29,6 @@
     "@corefront/tsconfig-preset-tools": "workspace:^",
     "@swc/cli": "^0.3.12",
     "@swc/core": "^1.4.11",
-    "@types/inquirer": "^9.0.7",
     "@types/yargs": "^17.0.32",
     "chokidar": "^3.6.0",
     "type-fest": "^4.15.0"

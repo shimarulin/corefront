@@ -3,9 +3,9 @@ import select from '@inquirer/select'
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
 import type { PackageJson } from 'type-fest'
-import { printf } from '~/log.mjs'
+import { printf, log } from '~/log.mjs'
 import { getCtx } from '~/ctx.mjs'
-import type { DefinedCommandModule } from '~/types.mjs'
+import type { DefinedCommandModule, PackageEntry } from '~/types.mjs'
 
 type CommandModuleMap = {
   [key: string]: DefinedCommandModule
@@ -44,19 +44,30 @@ export const run = async (): Promise<void> => {
             entry.manifest.name.includes('corefront-cli-plugin')
           )
       })
-      .map(async (entry) => {
-        class Exports implements PackageJson.ExportConditions {
-          [condition: string]: PackageJson.Exports
-        }
-
-        const relativeExecPath = (
+      .map(async (entry): Promise<void> => {
+        const relativeExecPath: string | undefined = (
           entry.manifest.exports &&
-          entry.manifest.exports instanceof Exports &&
+          typeof entry.manifest.exports !== 'string' &&
+          !Array.isArray(entry.manifest.exports) &&
+          entry.manifest.exports['.'] !== null &&
           typeof entry.manifest.exports['.'] === 'string'
         )
-          ? entry.manifest.exports['.'] as string
-          : typeof entry.manifest.module === 'string'
-            ? entry.manifest.module
+          ? entry.manifest.exports['.']
+          : (
+            entry.manifest.exports &&
+            typeof entry.manifest.exports !== 'string' &&
+            !Array.isArray(entry.manifest.exports) &&
+            entry.manifest.exports['.'] !== null &&
+            typeof entry.manifest.exports['.'] !== 'string' &&
+            entry.manifest.exports['.'] !== null &&
+            !Array.isArray(entry.manifest.exports['.']) &&
+            entry.manifest.exports['.'].import &&
+            typeof entry.manifest.exports['.'].import !== 'string' &&
+            !Array.isArray(entry.manifest.exports['.'].import)
+          )
+            ? (typeof entry.manifest.exports['.'].import.import === 'string' && entry.manifest.exports['.'].import.import)
+            || (typeof entry.manifest.exports['.'].import.default === 'string' && entry.manifest.exports['.'].import.default)
+            || undefined
             : undefined
 
         if (relativeExecPath) {
@@ -92,15 +103,25 @@ export const run = async (): Promise<void> => {
   }
 
   cli.command(['$0'], 'Select available command', () => { }, async (args): Promise<void> => {
-    const answer = await select({
-      message: 'Select a command',
-      choices: commandModuleChoices
-    })
+    if (commandModuleChoices.length > 0) {
+      const answer = await select({
+        message: 'Select a command',
+        choices: commandModuleChoices
+      })
 
-    if (answer === 'help') {
-      cli.showHelp()
+      if (answer === 'help') {
+        cli.showHelp()
+      } else {
+        commandModuleMap[answer].handler(args)
+      }
     } else {
-      commandModuleMap[answer].handler(args)
+      if (ctx.packages) {
+        log(`CLI plugins not found in local workspace ${ctx.packages.root.dir}`)
+      } else {
+        log(`There are no CLI plugins in the global store.\nTry installing plugins first and run again.`)
+      }
+
+      printf(ctx)
     }
   })
 
