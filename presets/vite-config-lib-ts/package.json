@@ -25,6 +25,7 @@
     "prepare": "vite build"
   },
   "devDependencies": {
+    "@corefront/tsconfig-preset-ts-lib": "workspace:*",
     "@corefront/vite-config-base": "workspace:*",
     "vite": "^5.2.0",
     "vite-plugin-dts": "^3.8.1",

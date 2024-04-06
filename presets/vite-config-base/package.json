@@ -11,5 +11,8 @@
         "types": "./main.d.ts"
       }
     }
+  },
+  "devDependencies": {
+    "@corefront/tsconfig-preset-ts-lib": "workspace:^"
   }
 }

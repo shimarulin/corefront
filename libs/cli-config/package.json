@@ -29,6 +29,7 @@
     "readdirp": "^3.6.0"
   },
   "devDependencies": {
+    "@corefront/tsconfig-preset-ts-lib": "workspace:^",
     "@corefront/vite-config-lib-ts": "workspace:*",
     "@vitejs/plugin-vue": "^5.0.4",
     "vite": "^5.2.0",

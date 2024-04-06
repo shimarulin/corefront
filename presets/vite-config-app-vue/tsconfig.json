@@ -1,11 +1,18 @@
 {
-  "extends": "../tsconfig.json",
+  "extends": "@corefront/tsconfig-preset-ts-lib/default.json",
   "compilerOptions": {
+    "baseUrl": "./src",
     "outDir": "dist",
     "rootDir": "src",
-    "paths": {
-      "~/*": ["./src/*"]
-    },
   },
-  "include": ["src/**/*"],
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/__tests__",
+    "**/*.test.ts",
+    "**/*.spec.ts"
+  ]
 }

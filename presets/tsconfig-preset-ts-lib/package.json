@@ -1,0 +1,7 @@
+{
+  "name": "@corefront/tsconfig-preset-ts-lib",
+  "version": "1.0.0",
+  "description": "Corefront TypeScript preset for use in project libraries",
+  "author": "Vyacheslav Shimarulin",
+  "license": "ISC"
+}

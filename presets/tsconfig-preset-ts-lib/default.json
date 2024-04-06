@@ -1,21 +1,19 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Corefront CLI Module",
+  "display": "Corefront ESM Library",
   "compilerOptions": {
     "declaration": true,
     "importHelpers": true,
-    "module": "NodeNext",
+    "module": "ESNext",
     "strict": true,
-    "target": "ESNext",
+    "target": "ES2020",
     "esModuleInterop": true,
-    "moduleResolution": "NodeNext",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
-    "baseUrl": "./src",
     "paths": {
       "~/*": [
         "./*"
       ]
     },
-    "composite": true
   }
 }

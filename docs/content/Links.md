@@ -20,6 +20,9 @@
 ## Libs
 
 - [Vue.js - The Progressive JavaScript Framework | Vue.js](https://vuejs.org/)
+- [tRPC - Move Fast and Break Nothing. End-to-end typesafe APIs made easy. | tRPC](https://trpc.io/)
+- [GitHub - blitz-js/superjson: Safely serialize JavaScript expressions to a superset of JSON, which includes Dates, BigInts, and more.](https://github.com/blitz-js/superjson)
+- 
 
 CLI
 
@@ -30,6 +33,10 @@ CLI
 - [Consistency Made Simple : PLOP](https://plopjs.com/)
 - [GitHub - chenasraf/simple-scaffold: Generate any file structure - from single components to entire app boilerplates, with a single command.](https://github.com/chenasraf/simple-scaffold)
 - [oclif: The Open CLI Framework](https://oclif.io/)
+
+Node
+
+- [Pino - Super fast, all natural JSON logger for Node.js](https://getpino.io/#/)
 
 ## References
 
