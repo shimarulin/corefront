@@ -3,6 +3,7 @@
   "description": "",
   "license": "ISC",
   "private": true,
+  "type": "module",
   "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
   "scripts": {
     "cx": "pnpm exec cx",
@@ -12,6 +13,7 @@
     "pkgs:up:i": "pnpm syncpack fix-mismatches && pnpm update --recursive --interactive --latest"
   },
   "devDependencies": {
+    "eslint": "^9.0.0",
     "syncpack": "^12.3.0",
     "typescript": "^5.3.3"
   },

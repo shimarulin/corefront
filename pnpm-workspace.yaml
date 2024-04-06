@@ -3,4 +3,5 @@ packages:
   - 'deps/*'
   - 'hosts/*'
   - 'libs/*'
+  - 'presets/*'
   - 'tools/*'
