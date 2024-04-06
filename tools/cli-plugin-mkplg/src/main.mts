@@ -26,6 +26,7 @@ const mkplg: DefineCommandModule<unknown, MkplgOptions> = (ctx) => {
     handler: (args) => {
       // console.log('Handler in plugin >>>>>>>>>>>>>>>>>>>>>')
       // console.dir(args, { depth: null })
+      console.dir(ctx, { depth: null })
     },
   }
 }

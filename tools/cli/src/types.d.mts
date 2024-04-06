@@ -24,6 +24,23 @@ export interface ProjectPackages {
   entries: PackageEntry[]
 }
 
+export interface GitUser {
+  name: string;
+  email: string;
+}
+
+export interface GitConfig {
+  user: GitUser;
+  remote?: {
+    origin: {
+      url: string;
+      fetch: string;
+    };
+  };
+  [key: string]: unknown;
+}
+
 export interface Ctx {
   packages: ProjectPackages | null
+  git: GitConfig
 }

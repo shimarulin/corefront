@@ -10,6 +10,7 @@ import type { DefinedCommandModule } from '~/types.mjs'
 type CommandModuleMap = {
   [key: string]: DefinedCommandModule
 }
+
 type CommandModuleChoice = {
   value: string;
   name: string;

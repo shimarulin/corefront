@@ -27,8 +27,10 @@
   },
   "dependencies": {
     "@inquirer/select": "^2.2.1",
+    "execa": "^8.0.1",
     "fast-glob": "^3.3.2",
     "find-up": "^7.0.0",
+    "ramda": "^0.29.1",
     "yargs": "^17.7.2"
   },
   "devDependencies": {
@@ -36,6 +38,7 @@
     "@swc/cli": "^0.3.12",
     "@swc/core": "^1.4.11",
     "@types/inquirer": "^9.0.7",
+    "@types/ramda": "^0.29.12",
     "@types/yargs": "^17.0.32",
     "chokidar": "^3.6.0",
     "readdirp": "^3.6.0",
