@@ -181,9 +181,6 @@ importers:
       '@swc/core':
         specifier: ^1.4.11
         version: 1.4.11
-      '@types/inquirer':
-        specifier: ^9.0.7
-        version: 9.0.7
       '@types/ramda':
         specifier: ^0.29.12
         version: 0.29.12
@@ -196,15 +193,15 @@ importers:
       readdirp:
         specifier: ^3.6.0
         version: 3.6.0
-      tsc-alias:
-        specifier: ^1.8.8
-        version: 1.8.8
       type-fest:
         specifier: ^4.15.0
         version: 4.15.0
 
   tools/cli-plugin-mkplg:
     dependencies:
+      '@corefront/generator-package-json':
+        specifier: workspace:^
+        version: link:../generator-package-json
       '@inquirer/prompts':
         specifier: ^4.3.2
         version: 4.3.2
@@ -224,12 +221,40 @@ importers:
       '@swc/core':
         specifier: ^1.4.11
         version: 1.4.11
-      '@types/inquirer':
-        specifier: ^9.0.7
-        version: 9.0.7
       '@types/yargs':
         specifier: ^17.0.32
         version: 17.0.32
+      chokidar:
+        specifier: ^3.6.0
+        version: 3.6.0
+      type-fest:
+        specifier: ^4.15.0
+        version: 4.15.0
+
+  tools/generator-package-json:
+    dependencies:
+      '@inquirer/prompts':
+        specifier: ^4.3.2
+        version: 4.3.2
+      ramda:
+        specifier: ^0.29.1
+        version: 0.29.1
+    devDependencies:
+      '@corefront/cli':
+        specifier: workspace:*
+        version: link:../cli
+      '@corefront/tsconfig-preset-tools':
+        specifier: workspace:*
+        version: link:../../presets/tsconfig-preset-tools
+      '@swc/cli':
+        specifier: ^0.3.12
+        version: 0.3.12(@swc/core@1.4.11)(chokidar@3.6.0)
+      '@swc/core':
+        specifier: ^1.4.11
+        version: 1.4.11
+      '@types/ramda':
+        specifier: ^0.29.12
+        version: 0.29.12
       chokidar:
         specifier: ^3.6.0
         version: 3.6.0
@@ -1163,13 +1188,6 @@ packages:
     resolution: {integrity: sha512-D0CFMMtydbJAegzOyHjtiKPLlvnm3iTZyZRSZoLq2mRhDdmLfIWOCYPfQJ4cu2erKghU++QvjcUjp/5h7hESpA==}
     dev: true
 
-  /@types/inquirer@9.0.7:
-    resolution: {integrity: sha512-Q0zyBupO6NxGRZut/JdmqYKOnN95Eg5V8Csg3PGKkP+FnvsUZx1jAyK7fztIszxxMuoBA6E3KXWvdZVXIpx60g==}
-    dependencies:
-      '@types/through': 0.0.33
-      rxjs: 7.8.1
-    dev: true
-
   /@types/jsonfile@6.1.4:
     resolution: {integrity: sha512-D5qGUYwjvnNNextdU59/+fI+spnwtTFmyQP0h+PfIOSkNfpU6AOICUOkm4i0OnSk+NyjdPJrxCDro0sJsWlRpQ==}
     dependencies:
@@ -1238,12 +1256,6 @@ packages:
     dependencies:
       '@types/http-errors': 2.0.4
       '@types/mime': 3.0.4
-      '@types/node': 20.12.2
-    dev: true
-
-  /@types/through@0.0.33:
-    resolution: {integrity: sha512-HsJ+z3QuETzP3cswwtzt2vEIiHBk/dCcHGhbmG5X3ecnwFD/lPrMpliGXxSCg03L9AhrdwA4Oz/qfspkDW+xGQ==}
-    dependencies:
       '@types/node': 20.12.2
     dev: true
 
@@ -1745,6 +1757,7 @@ packages:
     resolution: {integrity: sha512-KRs7WVDKg86PWiuAqhDrAQnTXZKraVcCc6vFdL14qrZ/DcWwuRo7VoiYXalXO7S5GKpqYiVEwCbgFDfxNHKJBQ==}
     engines: {node: ^12.20.0 || >=14}
     requiresBuild: true
+    optional: true
 
   /compressible@2.0.18:
     resolution: {integrity: sha512-AF3r7P5dWxL8MxyITRMlORQNaOA2IkAFaTr4k7BUumjPtRpGDTZpl0Pb1XCO6JeDCBdp126Cgs9sMxqSjgYyRg==}
@@ -3006,11 +3019,6 @@ packages:
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dev: false
 
-  /mylas@2.1.13:
-    resolution: {integrity: sha512-+MrqnJRtxdF+xngFfUUkIMQrUUL0KsxbADUkn23Z/4ibGg192Q+z+CQyiYwvWTsYjJygmMR8+w3ZDa98Zh6ESg==}
-    engines: {node: '>=12.0.0'}
-    dev: true
-
   /nanoid@3.3.7:
     resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -3298,13 +3306,6 @@ packages:
       nice-napi: 1.0.2
     dev: true
 
-  /plimit-lit@1.6.1:
-    resolution: {integrity: sha512-B7+VDyb8Tl6oMJT9oSO2CW8XC/T4UcJGrwOVoNGwOQsQYhlpfajmrMj5xeejqaASq3V/EqThyOeATEOMuSEXiA==}
-    engines: {node: '>=12'}
-    dependencies:
-      queue-lit: 1.5.2
-    dev: true
-
   /postcss@8.4.38:
     resolution: {integrity: sha512-Wglpdk03BSfXkHoQa3b/oulrotAkwrlLDRSOb9D0bN86FdRyE9lppSp33aHNPgBa0JKCoB+drFLZkQoRRYae5A==}
     engines: {node: ^10 || ^12 || >=14}
@@ -3364,11 +3365,6 @@ packages:
     dependencies:
       side-channel: 1.0.6
     dev: false
-
-  /queue-lit@1.5.2:
-    resolution: {integrity: sha512-tLc36IOPeMAubu8BkW8YDBV+WyIgKlYU7zUNs0J5Vk9skSZ4JfGlPOqplP0aHdfv7HL0B2Pg6nwiq60Qc6M2Hw==}
-    engines: {node: '>=12'}
-    dev: true
 
   /queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
@@ -3501,12 +3497,6 @@ packages:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
     dependencies:
       queue-microtask: 1.2.3
-
-  /rxjs@7.8.1:
-    resolution: {integrity: sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==}
-    dependencies:
-      tslib: 2.6.2
-    dev: true
 
   /safe-buffer@5.1.2:
     resolution: {integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==}
@@ -3880,18 +3870,6 @@ packages:
     resolution: {integrity: sha512-nsZd8ZeNUzukXPlJmTBwUAuABDe/9qtVDelJeT/qW0ow3ZS3BsQJtNkan1802aM9Uf68/Y8ljw86Hu0h5IUW3w==}
     dev: true
 
-  /tsc-alias@1.8.8:
-    resolution: {integrity: sha512-OYUOd2wl0H858NvABWr/BoSKNERw3N9GTi3rHPK8Iv4O1UyUXIrTTOAZNHsjlVpXFOhpJBVARI1s+rzwLivN3Q==}
-    hasBin: true
-    dependencies:
-      chokidar: 3.6.0
-      commander: 9.5.0
-      globby: 11.1.0
-      mylas: 2.1.13
-      normalize-path: 3.0.0
-      plimit-lit: 1.6.1
-    dev: true
-
   /tsconfck@3.0.3(typescript@5.4.3):
     resolution: {integrity: sha512-4t0noZX9t6GcPTfBAbIbbIU4pfpCwh0ueq3S4O/5qXI1VwK1outmxhe9dOiEWqMz3MW2LKgDTpqWV+37IWuVbA==}
     engines: {node: ^18 || >=20}
@@ -3903,10 +3881,6 @@ packages:
         optional: true
     dependencies:
       typescript: 5.4.3
-    dev: true
-
-  /tslib@2.6.2:
-    resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
     dev: true
 
   /type-check@0.4.0:

@@ -11,6 +11,7 @@
 - [Rust-based platform for the Web – SWC](https://swc.rs/)
 - [Vitest | Next Generation testing framework](https://vitest.dev/)
 - [Histoire | Histoire](https://histoire.dev/) or [Storybook: Frontend workshop for UI development](https://storybook.js.org/)
+- [Lage](https://microsoft.github.io/lage/)
 
 ### TypeScript
 

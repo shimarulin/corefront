@@ -1,4 +1,5 @@
 import type { DefineCommandModule } from '@corefront/cli'
+import { generatePackageJson } from '@corefront/generator-package-json';
 
 const mkplgOptionTypeChoices = [
   'generator',
@@ -23,10 +24,12 @@ const mkplg: DefineCommandModule<unknown, MkplgOptions> = (ctx) => {
           }
         })
     },
-    handler: (args) => {
+    handler: async (args) => {
       // console.log('Handler in plugin >>>>>>>>>>>>>>>>>>>>>')
       // console.dir(args, { depth: null })
       console.dir(ctx, { depth: null })
+      const packageJson = await generatePackageJson(ctx)
+      console.dir(packageJson, { depth: null })
     },
   }
 }
