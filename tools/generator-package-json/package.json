@@ -5,23 +5,22 @@
   "license": "ISC",
   "author": "Vyacheslav Shimarulin",
   "type": "module",
-  "types": "./src/main.d.mts",
+  "types": "./dist/main.d.mts",
   "exports": {
     ".": {
       "import": {
-        "types": "./src/main.mts",
+        "types": "./dist/main.d.mts",
         "import": "./dist/main.mjs"
       }
     }
   },
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "scripts": {
-    "build": "swc --delete-dir-on-start --strip-leading-paths --out-file-extension mjs -d dist src",
-    "dev": "pnpm run build --watch",
-    "postinstall": "pnpm run build"
+    "build": "tsc && tsc-alias",
+    "dev": "tsc && (concurrently \"tsc -w\" \"tsc-alias -w\")",
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "@inquirer/prompts": "^4.3.2",
@@ -30,10 +29,9 @@
   "devDependencies": {
     "@corefront/cli": "workspace:*",
     "@corefront/tsconfig-preset-tools": "workspace:*",
-    "@swc/cli": "^0.3.12",
-    "@swc/core": "^1.4.11",
     "@types/ramda": "^0.29.12",
-    "chokidar": "^3.6.0",
+    "concurrently": "^8.2.2",
+    "tsc-alias": "^1.8.8",
     "type-fest": "^4.15.0"
   }
 }

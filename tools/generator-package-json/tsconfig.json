@@ -2,7 +2,11 @@
   "extends": "@corefront/tsconfig-preset-tools/default.json",
   "compilerOptions": {
     "baseUrl": "./src",
+    "outDir": "dist"
   },
+  "include": [
+    "src/**/*"
+  ],
   "exclude": [
     "node_modules",
     "dist",

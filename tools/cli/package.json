@@ -8,11 +8,11 @@
     "cx": "./bin/run.mjs"
   },
   "type": "module",
-  "types": "./dist/index.d.mjs",
+  "types": "./dist/index.d.mts",
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/index.d.mjs",
+        "types": "./dist/index.d.mts",
         "import": "./dist/index.mjs"
       }
     }
@@ -37,11 +37,8 @@
   },
   "devDependencies": {
     "@corefront/tsconfig-preset-tools": "workspace:*",
-    "@swc/cli": "^0.3.12",
-    "@swc/core": "^1.4.11",
     "@types/ramda": "^0.29.12",
     "@types/yargs": "^17.0.32",
-    "chokidar": "^3.6.0",
     "concurrently": "^8.2.2",
     "tsc-alias": "^1.8.8",
     "type-fest": "^4.15.0"
