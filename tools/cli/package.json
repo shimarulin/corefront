@@ -24,7 +24,7 @@
   "scripts": {
     "build": "tsc && tsc-alias",
     "dev": "tsc && (concurrently \"tsc -w\" \"tsc-alias -w\")",
-    "postinstall": "npm run build && pnpm setup && pnpm link --global"
+    "postinstall": "[ -d \"./dist\" ] || (npm run build && pnpm setup && pnpm link --global)"
   },
   "dependencies": {
     "@inquirer/select": "^2.2.1",
