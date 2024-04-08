@@ -2,8 +2,7 @@
   "extends": "@corefront/tsconfig-preset-ts-lib/default.json",
   "compilerOptions": {
     "baseUrl": "./src",
-    "outDir": "dist",
-    "rootDir": "src",
+    "outDir": "dist"
   },
   "include": [
     "src/**/*"

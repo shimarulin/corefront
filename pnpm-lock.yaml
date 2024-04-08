@@ -168,6 +168,9 @@ importers:
       ramda:
         specifier: ^0.29.1
         version: 0.29.1
+      readdirp:
+        specifier: ^3.6.0
+        version: 3.6.0
       yargs:
         specifier: ^17.7.2
         version: 17.7.2
@@ -193,9 +196,6 @@ importers:
       concurrently:
         specifier: ^8.2.2
         version: 8.2.2
-      readdirp:
-        specifier: ^3.6.0
-        version: 3.6.0
       tsc-alias:
         specifier: ^1.8.8
         version: 1.8.8
@@ -270,8 +270,6 @@ importers:
       type-fest:
         specifier: ^4.15.0
         version: 4.15.0
-
-  tools/hjkgkh: {}
 
 packages:
 
