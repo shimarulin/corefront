@@ -21,7 +21,7 @@
   "scripts": {
     "build": "swc --delete-dir-on-start --strip-leading-paths --out-file-extension mjs -d dist src",
     "dev": "pnpm run build --watch",
-    "postinstall": "pnpm run build && pnpm setup && pnpm link --global"
+    "postinstall": "pnpm run build"
   },
   "dependencies": {
     "@inquirer/prompts": "^4.3.2",

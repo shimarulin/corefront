@@ -10,12 +10,10 @@
     "esModuleInterop": true,
     "moduleResolution": "NodeNext",
     "resolveJsonModule": true,
-    "baseUrl": "./src",
     "paths": {
       "~/*": [
         "./*"
       ]
-    },
-    "composite": true
+    }
   }
 }

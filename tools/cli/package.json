@@ -8,11 +8,12 @@
     "cx": "./bin/run.mjs"
   },
   "type": "module",
-  "types": "./src/types.d.mts",
+  "types": "./dist/index.d.mjs",
   "exports": {
     ".": {
       "import": {
-        "types": "./src/types.d.mts"
+        "types": "./dist/index.d.mjs",
+        "default": "./dist/index.mjs"
       }
     }
   },
@@ -24,7 +25,8 @@
   "scripts": {
     "build": "swc --delete-dir-on-start --strip-leading-paths --out-file-extension mjs -d dist src",
     "dev": "pnpm run build --watch",
-    "postinstall": "pnpm run build && pnpm setup && pnpm link --global"
+    "postinstall": "pnpm run build && pnpm run declaration && tsc-alias && pnpm setup && pnpm link --global",
+    "declaration": "tsc --declaration --emitDeclarationOnly"
   },
   "dependencies": {
     "@inquirer/select": "^2.2.1",
@@ -41,7 +43,9 @@
     "@types/ramda": "^0.29.12",
     "@types/yargs": "^17.0.32",
     "chokidar": "^3.6.0",
+    "concurrently": "^8.2.2",
     "readdirp": "^3.6.0",
+    "tsc-alias": "^1.8.8",
     "type-fest": "^4.15.0"
   }
 }

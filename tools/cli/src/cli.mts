@@ -1,11 +1,10 @@
 import { resolve } from 'node:path'
 import select from '@inquirer/select'
-import yargs from 'yargs'
+import yargs, { CommandModule } from 'yargs'
 import { hideBin } from 'yargs/helpers'
-import type { PackageJson } from 'type-fest'
 import { printf, log } from '~/log.mjs'
-import { getCtx } from '~/ctx.mjs'
-import type { DefinedCommandModule, PackageEntry } from '~/types.mjs'
+import { Ctx, getCtx } from '~/ctx.mjs'
+import { getPluginPrefixes, type PluginPrefixMap } from '~/plugin.mjs'
 
 type CommandModuleMap = {
   [key: string]: DefinedCommandModule
@@ -16,6 +15,9 @@ type CommandModuleChoice = {
   name: string;
   description: string;
 };
+
+export type DefinedCommandModule<T = {}, U = {}> = Required<Pick<CommandModule<T, U>, 'command' | 'describe' | 'handler' | 'builder'>> & Pick<CommandModule<T, U>, 'aliases' | 'deprecated'>
+export type DefineCommandModule<T = {}, U = {}> = (ctx: Ctx) => DefinedCommandModule<T, U>
 
 const helpChoice: CommandModuleChoice = {
   name: 'help',
@@ -35,14 +37,12 @@ export const run = async (): Promise<void> => {
 
   const ctx = await getCtx()
 
+  const pluginPrefixMap: PluginPrefixMap = getPluginPrefixes()
+
   if (ctx.packages?.entries) {
     await Promise.all(ctx.packages?.entries
       .filter((entry) => {
-        return entry.manifest.name &&
-          (
-            entry.manifest.name.includes('@corefront/cli-plugin') ||
-            entry.manifest.name.includes('corefront-cli-plugin')
-          )
+        return entry.manifest.name && entry.manifest.name.includes(pluginPrefixMap.internal)
       })
       .map(async (entry): Promise<void> => {
         const relativeExecPath: string | undefined = (

@@ -1,8 +1,7 @@
 import { dirname } from 'node:path'
 import readdirp from 'readdirp'
 import type { PackageJson } from 'type-fest'
-import { findPackageEntryUp } from '~/pkg.mjs'
-import type { PackageEntryBase } from '~/types.mjs'
+import { PackageEntryBase, findPackageEntryUp } from '~/pkg.mjs'
 
 export interface ProjectPackagesBase {
   root: PackageEntryBase
@@ -71,7 +70,6 @@ export const getProjectPackages = async (cwd: string | URL = process.cwd()): Pro
   const entries = projectPackagesBase
     ? await getPackageEntryList(await findPackageEntryBaseList(projectPackagesBase.root.dir))
     : []
-
 
   return projectPackagesBase
     ? {

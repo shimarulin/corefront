@@ -1,6 +1,21 @@
 import { execaCommand } from 'execa'
 import { assocPath, split } from 'ramda'
-import { GitConfig } from './types.mjs'
+
+export interface GitUser {
+  name: string;
+  email: string;
+}
+
+export interface GitConfig {
+  user: GitUser;
+  remote?: {
+    origin: {
+      url: string;
+      fetch: string;
+    };
+  };
+  [key: string]: unknown;
+}
 
 export const getGitConfig = async (cwd: string | URL = process.cwd()): Promise<GitConfig> => {
   const { stdout } = await execaCommand('git config -l', {

@@ -2,12 +2,7 @@
   "extends": "@corefront/tsconfig-preset-tools/default.json",
   "compilerOptions": {
     "baseUrl": "./src",
+    "outDir": "dist"
   },
-  "exclude": [
-    "node_modules",
-    "dist",
-    "**/__tests__",
-    "**/*.test.ts",
-    "**/*.spec.ts"
-  ]
+  "exclude": ["node_modules", "dist", "**/__tests__", "**/*.test.ts", "**/*.spec.ts"]
 }
