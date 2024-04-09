@@ -99,7 +99,7 @@ importers:
         specifier: ^3.8.1
         version: 3.8.1(typescript@5.4.3)(vite@5.2.7)
 
-  presets/tsconfig-preset-tools: {}
+  presets/tsconfig-preset-es-module: {}
 
   presets/tsconfig-preset-ts-lib: {}
 
@@ -175,9 +175,9 @@ importers:
         specifier: ^17.7.2
         version: 17.7.2
     devDependencies:
-      '@corefront/tsconfig-preset-tools':
+      '@corefront/tsconfig-preset-es-module':
         specifier: workspace:*
-        version: link:../../presets/tsconfig-preset-tools
+        version: link:../../presets/tsconfig-preset-es-module
       '@types/ramda':
         specifier: ^0.29.12
         version: 0.29.12
@@ -212,9 +212,9 @@ importers:
       '@corefront/cli':
         specifier: workspace:*
         version: link:../cli
-      '@corefront/tsconfig-preset-tools':
+      '@corefront/tsconfig-preset-es-module':
         specifier: workspace:^
-        version: link:../../presets/tsconfig-preset-tools
+        version: link:../../presets/tsconfig-preset-es-module
       '@swc/cli':
         specifier: ^0.3.12
         version: 0.3.12(@swc/core@1.4.11)(chokidar@3.6.0)
@@ -243,9 +243,9 @@ importers:
       '@corefront/cli':
         specifier: workspace:*
         version: link:../cli
-      '@corefront/tsconfig-preset-tools':
+      '@corefront/tsconfig-preset-es-module':
         specifier: workspace:*
-        version: link:../../presets/tsconfig-preset-tools
+        version: link:../../presets/tsconfig-preset-es-module
       '@types/ramda':
         specifier: ^0.29.12
         version: 0.29.12

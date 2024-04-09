@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@corefront/cli": "workspace:*",
-    "@corefront/tsconfig-preset-tools": "workspace:^",
+    "@corefront/tsconfig-preset-es-module": "workspace:^",
     "@swc/cli": "^0.3.12",
     "@swc/core": "^1.4.11",
     "@types/yargs": "^17.0.32",

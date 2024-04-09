@@ -36,7 +36,7 @@
     "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "@corefront/tsconfig-preset-tools": "workspace:*",
+    "@corefront/tsconfig-preset-es-module": "workspace:*",
     "@types/ramda": "^0.29.12",
     "@types/yargs": "^17.0.32",
     "concurrently": "^8.2.2",
