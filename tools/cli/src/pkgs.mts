@@ -2,6 +2,7 @@ import { dirname } from 'node:path'
 import readdirp from 'readdirp'
 import type { PackageJson } from 'type-fest'
 import { PackageEntryBase, findPackageEntryUp } from '~/pkg.mjs'
+import { importPackageJson } from '~/import-json.mjs'
 
 export interface ProjectPackagesBase {
   root: PackageEntryBase
@@ -54,9 +55,8 @@ export const findPackageEntryBaseList = async (dir: string): Promise<PackageEntr
 
 export const getPackageEntryList = async (packageEntryList: PackageEntryBase[]): Promise<PackageEntry[]> => {
   return Promise.all(packageEntryList.map(async ({ dir, pkg }): Promise<PackageEntry> => {
-    const manifest = await import(pkg, { with: { type: "json" } }).then(module => {
-      return module.default as PackageJson
-    })
+    const manifest = await importPackageJson(pkg)
+
     return {
       dir,
       pkg,
