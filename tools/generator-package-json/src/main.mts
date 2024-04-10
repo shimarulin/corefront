@@ -46,7 +46,9 @@ export const generatePackageJson = async (ctx: Ctx, baseDir: string = 'packages'
     })
 
   const name = isMonorepo
-    ? `@${scopeName}/${packageName}`
+    ? defaults?.name
+      ? defaults.name
+      : `@${scopeName}/${packageName}`
     : packageName
 
   const description: string = defaults?.description

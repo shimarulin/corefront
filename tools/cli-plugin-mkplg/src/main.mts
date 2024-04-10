@@ -1,8 +1,7 @@
 import { input } from '@inquirer/prompts';
 import { DefineCommandModule, getPluginPrefixes } from '@corefront/cli'
-
 import { generatePackageJson } from '@corefront/generator-package-json';
-import { templateHandler } from '~/templateHandler.mjs';
+import { templateHandler } from '~/tpl.mjs';
 
 const mkplgOptionTypeChoices = [
   'generator',
@@ -11,6 +10,8 @@ const mkplgOptionTypeChoices = [
 type MkplgOptionTypeChoices = typeof mkplgOptionTypeChoices[keyof typeof mkplgOptionTypeChoices];
 
 export interface MkplgOptions {
+  name?: string,
+  description?: string
   type?: MkplgOptionTypeChoices
 }
 
@@ -21,6 +22,16 @@ const mkplg: DefineCommandModule<unknown, MkplgOptions> = (ctx) => {
     builder: (argv) => {
       return argv
         .options({
+          name: {
+            alias: 'n',
+            describe: 'Command name',
+            type: 'string'
+          },
+          description: {
+            alias: 'd',
+            describe: 'Command description',
+            type: 'string'
+          },
           type: {
             alias: 't',
             describe: 'Type of Corefront CLI plugin',
@@ -29,28 +40,19 @@ const mkplg: DefineCommandModule<unknown, MkplgOptions> = (ctx) => {
         })
     },
     handler: async (args) => {
-      const commandName: string = await input({
+      const commandName: string = args.name || await input({
         message: 'Enter a new command name',
       })
 
-      const commandDescription: string = await input({
+      const commandDescription: string = args.description || await input({
         message: 'Enter a new command description',
       })
 
-      const pluginPrefixes = getPluginPrefixes(ctx.packages?.root.manifest.name)
-
-      const packageName = ``
-
+      const packagePrefix = getPluginPrefixes(ctx.packages?.root.manifest.name).internal
+      const packageName = `${packagePrefix}${commandName}`
       const baseDir = 'tools'
 
-      // console.log('Handler in plugin >>>>>>>>>>>>>>>>>>>>>')
-      // console.dir(args, { depth: null })
-      // console.dir(ctx, { depth: null })
-      const pkg = await generatePackageJson(ctx, baseDir, {name: commandName, description: commandDescription})
-
-
-      // console.log(getPackageName('rrrertw'))
-      // console.dir(packageJson, { depth: null })
+      const pkg = await generatePackageJson(ctx, baseDir, {name: packageName, description: commandDescription})
 
       templateHandler({ ctx, pkg, commandName, baseDir })
     },

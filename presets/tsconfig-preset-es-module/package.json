@@ -2,6 +2,6 @@
   "name": "@corefront/tsconfig-preset-es-module",
   "version": "1.0.0",
   "description": "Corefront TypeScript preset for use in project tools",
-  "author": "Vyacheslav Shimarulin",
-  "license": "ISC"
+  "license": "ISC",
+  "author": "Vyacheslav Shimarulin"
 }

@@ -39,7 +39,8 @@ export const templateHandler = async ({ ctx, pkg, baseDir = '', commandName }: T
       ctx,
       pkg,
       commandName,
-    }
+    },
+    logLevel: 'warning'
   }
 
   const pkgExtends: PackageJson = {
@@ -77,12 +78,7 @@ export const templateHandler = async ({ ctx, pkg, baseDir = '', commandName }: T
   }
 
   const pkgResult = deepmerge(pkgExtends, pkg)
-
-  // console.log(pkgResult)
-
   const pkgContent: string = JSON.stringify(pkgResult, null, 2)
-
-  // console.log(pkg.name)
 
   await Scaffold(cfg)
   await writeFile(resolve(output, packageName, './package.json'), pkgContent, {encoding: 'utf-8'})

@@ -121,7 +121,7 @@ export const run = async (): Promise<void> => {
         log(`There are no CLI plugins in the global store.\nTry installing plugins first and run again.`)
       }
 
-      printf(ctx)
+      // printf(ctx)
     }
   })
 

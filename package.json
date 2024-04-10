@@ -3,8 +3,8 @@
   "description": "",
   "license": "ISC",
   "private": true,
-  "type": "module",
   "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
+  "type": "module",
   "scripts": {
     "cx": "pnpm exec cx",
     "fmt": "pnpm run fmt:pkgs",
